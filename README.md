@@ -1,14 +1,14 @@
 <p align="center">🇺🇸 <a href="README.md">English</a> | 🇨🇳 <a href="README.zh.md">中文</a></p>
 
-<h1 align="center">Model Router</h1>
+<h1 align="center">Model Router Skill</h1>
 
 <p align="center"><a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="AGPL-3.0 license"></a> <img src="https://img.shields.io/badge/status-experimental-purple.svg" alt="Experimental"></p>
 
-![Model Router banner](assets/model-router-banner.png)
+![Model Router Skill banner](assets/model-router-banner.png)
 
 ## Introduction
 
-Model Router is a Codex skill for inferring task intent from conversation and workspace context, then selecting a suitable model and reasoning effort. It treats public benchmark results as dated evidence rather than a permanent ranking.
+Model Router Skill is a Codex skill for inferring task intent from conversation and workspace context, then selecting a suitable model and reasoning effort. It treats public benchmark results as dated evidence rather than a permanent ranking.
 
 The router covers reasoning, coding, agentic execution, multimodal work, latency, cost, and reliability. It distinguishes an advisory recommendation for the current turn from an explicit model override for delegated tasks.
 

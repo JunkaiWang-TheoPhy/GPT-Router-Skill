@@ -3,7 +3,7 @@ name: model-router
 description: Infer the user's task intent from conversation and workspace context, then recommend or route to the best available Codex model and reasoning effort. Use when model choice, delegation, latency, or quality tradeoffs need to be decided; do not use it as a substitute for domain-specific execution skills.
 ---
 
-# Intent Model Router
+# Model Router Skill
 
 Select the least expensive model that is likely to satisfy the actual task, escalating when ambiguity, risk, or reasoning depth warrants it. This skill is a routing aid: it may recommend a model for the current response or set an explicit model when creating/delegating a Codex task, but it cannot change the model already running the current turn.
 

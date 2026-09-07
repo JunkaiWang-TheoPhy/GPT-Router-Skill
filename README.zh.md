@@ -1,14 +1,14 @@
 <p align="center">🇺🇸 <a href="README.md">English</a> | 🇨🇳 <a href="README.zh.md">中文</a></p>
 
-<h1 align="center">Model Router</h1>
+<h1 align="center">Model Router Skill</h1>
 
 <p align="center"><a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="AGPL-3.0 许可证"></a> <img src="https://img.shields.io/badge/status-experimental-purple.svg" alt="实验状态"></p>
 
-![Model Router 路由示意图](assets/model-router-banner.png)
+![Model Router Skill 路由示意图](assets/model-router-banner.png)
 
 ## 引言
 
-Model Router 是一个 Codex Skill，用于从对话和工作区上下文推断任务意图，并选择合适的模型与推理强度。它把公开榜单视为带日期的证据，不把任何榜单当成永久排名。
+Model Router Skill 是一个 Codex Skill，用于从对话和工作区上下文推断任务意图，并选择合适的模型与推理强度。它把公开榜单视为带日期的证据，不把任何榜单当成永久排名。
 
 路由维度包括推理、编码、智能体执行、多模态任务、延迟、成本和可靠性。技能会区分当前回复的建议与委派任务时的显式模型覆盖。
 
