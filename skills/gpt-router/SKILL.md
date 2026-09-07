@@ -69,3 +69,5 @@ Use `Confidence: low` when intent or environment evidence is incomplete. Disting
 ## 5. Evidence maintenance
 
 For model-quality claims, read [references/model-evidence.md](references/model-evidence.md) when the task needs a nontrivial comparison. Treat it as a dated evidence register, not a permanent ranking. Prefer multiple independent leaderboards and task-specific evaluations over one aggregate score. Record benchmark conditions, confidence intervals when available, publication date, and whether a result is vendor-reported, third-party, or anecdotal. Exact Codex aliases such as Sol, Terra, Luna, and Astra may not appear on public boards; do not fabricate equivalences—mark the mapping as an internal hypothesis until measured locally.
+
+For provider-specific routing and price discovery, read [references/provider-catalog.md](references/provider-catalog.md). It defines the supported-family slots without treating availability, quality, or price as permanent.
