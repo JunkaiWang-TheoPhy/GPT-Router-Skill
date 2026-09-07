@@ -11,6 +11,8 @@ Select the least expensive model that is likely to satisfy the actual task, swit
 
 Before recommending a route, identify a concrete `model_id` from runtime metadata, host capabilities, or non-secret configuration. A provider family alone is not executable evidence. If only “GLM” or “DeepSeek” is known, label it `version unknown / not executable` and do not attach a reasoning effort or fit score.
 
+Run `scripts/probe_provider_models.py` when provider credentials may exist. It reads environment variables, DSH credential references, and configured OpenAI-compatible gateways without printing secret values. A successful `/models` response proves catalog visibility through that credential path, not performance, price, or compatibility with every client. Read [references/runtime-probe.md](references/runtime-probe.md) for the latest privacy-safe local snapshot and interpretation rules.
+
 ## 1. Build a minimal task profile
 
 Read only context needed for routing:
