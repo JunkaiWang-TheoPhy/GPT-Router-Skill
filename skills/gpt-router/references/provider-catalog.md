@@ -18,4 +18,4 @@ Last reviewed: 2026-09-07. This is a routing inventory, not a leaderboard. A pro
 
 For each family, retain a dated row with `model_id`, `provider`, `benchmark`, `score`, `rank`, `uncertainty`, `input_price`, `cached_input_price`, `output_price`, `tool_cost`, `latency`, `modality`, and `source_url`. Normalize scores only inside the same benchmark and conditions. Compute a task-weighted quality score, then report cost per successful completed task and a quality/cost Pareto frontier. Do not compare Seedance video-generation costs with text token costs without a separate unit model.
 
-Current evidence status: the family slots are registered, but exact preferred routes remain `unverified` until provider-level measurements and reproducible snapshots are added.
+Current evidence status: the family slots are registered, but exact preferred routes remain `unverified` until provider-level measurements and reproducible snapshots are added. User-facing recommendations should summarize this uncertainty naturally instead of exposing the catalog schema.

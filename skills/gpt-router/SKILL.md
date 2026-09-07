@@ -50,9 +50,13 @@ Reasoning-effort labels map directly to the host capability (`light` → `low`, 
 - Invoke domain skills after routing when their trigger applies (for example, documents, spreadsheets, security review, or web research). Model choice never replaces those skills.
 - If the profile is genuinely underdetermined, choose a safe balanced route (Sol medium) and name the single uncertainty that could change the decision; do not interrogate the user for trivial distinctions.
 
-## 4. Response contract
+## 4. Response style and contract
 
-Return a compact decision record:
+Default to a natural, human-readable answer. Lead with the recommendation and explain it in the context of the user's actual conversation. For example: “这轮用 Sol medium 就够了；如果你要继续做跨榜单调研和仓库改造，我会切到 Terra high。” Do not expose internal routing fields or repeat the user's question in a rigid template.
+
+Mention the main reason, the likely upgrade trigger, and any meaningful uncertainty in one or two short paragraphs. Keep the tone conversational and decisive, not bureaucratic. Do not mention hidden workspace details merely to make the answer sound analytical.
+
+Only when the user explicitly asks for an audit trail, JSON, or a structured decision record, return:
 
 ```text
 Intent: <one-sentence inferred goal>
