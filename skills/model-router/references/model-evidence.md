@@ -21,7 +21,7 @@ The router tracks several complementary public sources instead of collapsing eve
 | --- | --- | --- |
 | Preference | [Arena overall](https://arena.ai/leaderboard) | Human preference across general prompts |
 | Preference | [Arena coding](https://arena.ai/leaderboard?category=coding) | Human preference on coding prompts |
-| Composite | [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/leaderboards/models) | Multi-benchmark intelligence and price/latency context |
+| Composite + price | [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/leaderboards/models) | Multi-benchmark intelligence, cost-per-task, price, latency, and speed context |
 | Coding | [SWE-bench](https://www.swebench.com/) | Repository issue resolution by agents |
 | Coding | [LiveCodeBench](https://livecodebench.github.io/) | Contamination-resistant competitive coding |
 | Agentic | [GAIA benchmark](https://huggingface.co/gaia-benchmark) | General assistant tool use and multi-step tasks |
@@ -31,6 +31,19 @@ The router tracks several complementary public sources instead of collapsing eve
 | Science/reasoning | [Humanity's Last Exam](https://lastexam.ai/) | Broad expert-level knowledge and reasoning |
 
 Coverage statistic for this revision: 10 source families (3 preference/composite, 2 coding, 3 agentic/browser, 1 multimodal, 1 science/reasoning). This is source coverage, not a claim that one model leads all families.
+
+## Price and efficiency accounting
+
+Track price as a first-class routing signal, but keep these quantities separate:
+
+- input, cached-input, cache-write, reasoning, and output token prices;
+- tool or search charges and any priority/fast-mode surcharge;
+- estimated cost per task, not only cost per million tokens;
+- latency, throughput, and retry/failure cost.
+
+[Artificial Analysis](https://artificialanalysis.ai/models/) publishes cost-per-task calculations that combine token categories and benchmark token usage, while its [data API](https://artificialanalysis.ai/data-api) exposes benchmark, pricing, latency, and throughput fields. Use those as external comparison inputs. For Codex aliases, prefer current host usage telemetry or invoice data; if unavailable, mark price as `unknown` and avoid pretending that a public family price applies.
+
+The router should select by a quality–cost frontier: choose the cheapest route whose expected quality and risk satisfy the task, then escalate when verification fails. For repeated workloads, report median and p95 cost per completed task, including retries, rather than a single optimistic token estimate.
 
 ## Claim ledger
 
