@@ -13,6 +13,33 @@ This register supports routing decisions; it is not a universal ranking. Scores 
 | Agentic tool/browser/computer workflows | [BenchLM agentic leaderboard](https://benchlm.ai/agentic) | A task-specific signal for tool use and agentic workflows. | Methodology and model coverage can change; snapshot rather than ground truth. |
 | Multimodal-agent benchmark catalog | [Awesome multimodal agent benchmarks](https://github.com/PhiloLabs/awesome-multimodal-agent-benchmarks) | Discovery index for multimodal-agent evaluations and their task definitions. | A catalog is not itself a score or validation result. |
 
+## Source inventory for recurring collection
+
+The router tracks several complementary public sources instead of collapsing everything into one leaderboard. A future snapshot should record the retrieval date, model identifier, effort/tool settings, raw score, rank, uncertainty interval, and source type for each row.
+
+| Family | Source | Primary signal |
+| --- | --- | --- |
+| Preference | [Arena overall](https://arena.ai/leaderboard) | Human preference across general prompts |
+| Preference | [Arena coding](https://arena.ai/leaderboard?category=coding) | Human preference on coding prompts |
+| Composite | [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/leaderboards/models) | Multi-benchmark intelligence and price/latency context |
+| Coding | [SWE-bench](https://www.swebench.com/) | Repository issue resolution by agents |
+| Coding | [LiveCodeBench](https://livecodebench.github.io/) | Contamination-resistant competitive coding |
+| Agentic | [GAIA benchmark](https://huggingface.co/gaia-benchmark) | General assistant tool use and multi-step tasks |
+| Agentic | [τ-bench](https://github.com/sierra-research/τ-bench) | Tool-calling policy adherence and stateful interaction |
+| Browser/research | [BrowseComp](https://openai.com/index/browsecomp/) | Difficult web retrieval and synthesis |
+| Multimodal reasoning | [MMMU-Pro](https://mmmu-benchmark.github.io/) | Visual and cross-domain reasoning |
+| Science/reasoning | [Humanity's Last Exam](https://lastexam.ai/) | Broad expert-level knowledge and reasoning |
+
+Coverage statistic for this revision: 10 source families (3 preference/composite, 2 coding, 3 agentic/browser, 1 multimodal, 1 science/reasoning). This is source coverage, not a claim that one model leads all families.
+
+## Claim ledger
+
+| Claim ID | Claim | Evidence count | Status | Routing treatment |
+| --- | --- | ---: | --- | --- |
+| H-001 | Astra may improve agentic and multimodal work more than Sol while offering a smaller pure-reasoning gain. | 0 direct public measurements of the exact aliases; 1 user-reported hypothesis | Provisional | Use only as a prior; require local A/B evaluation before changing a default route. |
+| F-001 | GPT-5.4 vendor materials report combined reasoning, coding, agentic, and computer-use capabilities. | 1 primary source | Observed, vendor-reported | Supports considering a frontier route for complex agentic tasks, with a vendor-bias caveat. |
+| M-001 | Public leaderboards are task- and population-dependent and can disagree. | 4 source families in the current register | Methodological conclusion | Weight the benchmark family matching the inferred task; do not use a universal rank. |
+
 ## How to aggregate
 
 1. Separate dimensions into reasoning, coding, agentic execution, multimodal understanding, latency, cost, and reliability.
