@@ -7,6 +7,10 @@ description: Infer the user's task intent from conversation and workspace contex
 
 Select the least expensive model that is likely to satisfy the actual task, switching models when ambiguity, risk, or reasoning depth makes another fit more appropriate. This skill is a routing aid: it may recommend a model for the current response or set an explicit model when creating/delegating a Codex task, but it cannot change the model already running the current turn.
 
+## Runtime model identity
+
+Before recommending a route, identify a concrete `model_id` from runtime metadata, host capabilities, or non-secret configuration. A provider family alone is not executable evidence. If only “GLM” or “DeepSeek” is known, label it `version unknown / not executable` and do not attach a reasoning effort or fit score.
+
 ## 1. Build a minimal task profile
 
 Read only context needed for routing:
