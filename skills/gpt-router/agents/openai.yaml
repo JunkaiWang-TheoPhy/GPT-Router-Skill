@@ -1,4 +1,4 @@
 interface:
-  display_name: "Model Router Skill"
+  display_name: "GPT Router Skill"
   short_description: "Infer task intent and route to the best available model"
   default_prompt: "Analyze the current task and recommend the best model and reasoning effort."

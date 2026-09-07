@@ -2,6 +2,10 @@
 
 Last reviewed: 2026-09-07
 
+## Supported model-family slots
+
+The router accepts provider/model identifiers for GPT, Kimi, DeepSeek, GLM, Doubao, Seedance, Gemini, and Grok. These are routing slots, not claims of equal quality. Each slot must carry its own measured quality, price, latency, modality, and tool-support fields before it can become a preferred route.
+
 This register supports routing decisions; it is not a universal ranking. Scores from different evaluations are not directly interchangeable. Update entries with the retrieval date, evaluation conditions, and a link to the primary source.
 
 ## Evidence currently used

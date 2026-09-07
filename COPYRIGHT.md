@@ -1,6 +1,6 @@
 # Copyright
 
-Copyright (C) 2026 Model Router contributors.
+Copyright (C) 2026 GPT Router Skill contributors.
 
 Unless a file states otherwise, original source, documentation, and configuration in this repository are copyright by their respective contributors and are licensed under the GNU Affero General Public License v3.0. Copyright ownership is not waived by making the repository public, and the license grants the permissions needed for forking and redistribution under its conditions.
 
