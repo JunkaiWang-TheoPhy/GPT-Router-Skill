@@ -5,7 +5,7 @@ description: Infer the user's task intent from conversation and workspace contex
 
 # GPT Router Skill
 
-Select the least expensive model that is likely to satisfy the actual task, escalating when ambiguity, risk, or reasoning depth warrants it. This skill is a routing aid: it may recommend a model for the current response or set an explicit model when creating/delegating a Codex task, but it cannot change the model already running the current turn.
+Select the least expensive model that is likely to satisfy the actual task, switching models when ambiguity, risk, or reasoning depth makes another fit more appropriate. This skill is a routing aid: it may recommend a model for the current response or set an explicit model when creating/delegating a Codex task, but it cannot change the model already running the current turn.
 
 ## 1. Build a minimal task profile
 
@@ -29,15 +29,15 @@ Use this practical model map (names are case-insensitive):
 | Large synthesis, novel architecture, high-stakes reasoning, difficult debugging, or subtle tradeoffs | **Astra max** | Highest reasoning headroom; accept higher latency/cost |
 | Complex implementation, multi-file refactor, rigorous review, or research synthesis | **Terra high** | Strong general reasoning with good execution reliability |
 | Normal coding, analysis, tool use, or a response needing balanced quality | **Sol medium** | Default balanced route |
-| Straightforward lookup, formatting, small edit, classification, or latency-sensitive step | **Sol light** | Fast and economical; escalate if uncertainty appears |
+| Straightforward lookup, formatting, small edit, classification, or latency-sensitive step | **Sol light** | Fast and economical; switch if uncertainty changes the task fit |
 | Broad but repetitive scanning, enumeration, summarization, or batch triage | **Luna max** | High-throughput context handling; use a stronger model for novel decisions |
 
 Adjust the initial choice as follows:
 
-1. Raise one tier for high ambiguity, irreversible actions, security/privacy concerns, or an unmet verification gate.
-2. Lower one tier for deterministic, well-specified work with a narrow acceptance test.
-3. Prefer Terra high over Astra max when the task is complex but conventional and implementation-oriented.
-4. Prefer Luna max only when breadth/volume dominates originality; do not use it to make a critical architectural decision solely because it is fast at scanning.
+1. For high ambiguity, irreversible actions, security/privacy concerns, or an unmet verification gate, select the model with the reasoning and verification capacity that best fits the risk; do not describe this as an upgrade.
+2. For deterministic, well-specified work with a narrow acceptance test, prefer the route with lower latency or cost when quality remains sufficient.
+3. Choose Terra high rather than Astra max when the task is complex but conventional and implementation-oriented; these are different fits, not levels in a ladder.
+4. Choose Luna max when breadth/volume dominates originality; do not use it for a critical architectural decision solely because it is efficient at scanning.
 5. If a requested model or effort is unavailable on the target host, choose the nearest supported combination and state the substitution.
 
 Reasoning-effort labels map directly to the host capability (`light` → `low`, `media`/`medium` → `medium`, `high` → `high`, `max` → `max`). Never invent support for a model/effort pairing; inspect the current host's advertised capabilities when routing a delegated task.

@@ -47,7 +47,7 @@ Track price as a first-class routing signal, but keep these quantities separate:
 
 [Artificial Analysis](https://artificialanalysis.ai/models/) publishes cost-per-task calculations that combine token categories and benchmark token usage, while its [data API](https://artificialanalysis.ai/data-api) exposes benchmark, pricing, latency, and throughput fields. Use those as external comparison inputs. For Codex aliases, prefer current host usage telemetry or invoice data; if unavailable, mark price as `unknown` and avoid pretending that a public family price applies.
 
-The router should select by a quality–cost frontier: choose the cheapest route whose expected quality and risk satisfy the task, then escalate when verification fails. For repeated workloads, report median and p95 cost per completed task, including retries, rather than a single optimistic token estimate.
+The router should select by a quality–cost frontier: choose the least costly route whose expected quality and risk satisfy the task, then switch to a better-fitting route when verification fails. For repeated workloads, report median and p95 cost per completed task, including retries, rather than a single optimistic token estimate.
 
 ## Claim ledger
 
