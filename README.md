@@ -17,6 +17,7 @@ The router covers reasoning, coding, agentic execution, multimodal work, latency
 - `skills/model-router/` — installable Codex skill
 - `skills/model-router/references/model-evidence.md` — dated benchmark and source register
 - `skills/model-router/SECURITY.md` — public/forkable repository security policy
+- `COPYRIGHT.md` and `NOTICE` — copyright and third-party attribution records
 - `assets/model-router-banner.png` — repository banner
 
 ## Use
@@ -29,4 +30,4 @@ Use multiple independent, task-specific evaluations where possible. Do not equat
 
 ## License
 
-Licensed under the GNU Affero General Public License v3.0. See [LICENSE](LICENSE).
+Copyright is retained by the project contributors. The code and skill are licensed under the GNU Affero General Public License v3.0; preserve notices and mark modifications when redistributing. See [COPYRIGHT.md](COPYRIGHT.md), [NOTICE](NOTICE), and [LICENSE](LICENSE).

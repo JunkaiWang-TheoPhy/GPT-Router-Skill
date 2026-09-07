@@ -17,6 +17,7 @@ Model Router 是一个 Codex Skill，用于从对话和工作区上下文推断�
 - `skills/model-router/` — 可安装的 Codex Skill
 - `skills/model-router/references/model-evidence.md` — 带日期的榜单与来源登记
 - `skills/model-router/SECURITY.md` — 公开、可 Fork 仓库的安全策略
+- `COPYRIGHT.md` 和 `NOTICE` — 版权与第三方归属登记
 - `assets/model-router-banner.png` — 仓库 Banner
 
 ## 使用
@@ -29,4 +30,4 @@ Model Router 是一个 Codex Skill，用于从对话和工作区上下文推断�
 
 ## 许可证
 
-本项目采用 GNU Affero General Public License v3.0，详见 [LICENSE](LICENSE)。
+项目贡献者保留版权。代码和 Skill 采用 GNU Affero General Public License v3.0；再分发时请保留版权与许可证声明，并标注修改内容。详见 [COPYRIGHT.md](COPYRIGHT.md)、[NOTICE](NOTICE) 和 [LICENSE](LICENSE)。
