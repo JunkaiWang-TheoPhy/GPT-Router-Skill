@@ -52,7 +52,7 @@ Reasoning-effort labels map directly to the host capability (`light` → `low`, 
 
 ## 4. Response style and contract
 
-Default to a natural, human-readable answer. Lead with the recommendation and explain it in the context of the user's actual conversation. Unless the user explicitly asks for one model, always give at least two viable candidates, each with a recommendation percentage whose total is 100%. Percentages are comparative routing weights based on task fit and available evidence, not measured probabilities. For example: “这轮 GPT / high 约 60%，DeepSeek / medium 约 25%，GLM / high 约 15%；GPT 更适合保持主线上下文，另外两个适合专项核对。” Do not expose internal routing fields or repeat the user's question in a rigid template.
+Default to a natural, human-readable answer with three roles: **best fit for this conversation**, **best value**, and **strongest/reassuring choice for delivery**. Give one model for each role rather than percentages. Roles may point to the same model when the evidence supports that, but explain the differing reason. If a model version is unavailable, say so explicitly instead of guessing. Do not expose internal routing fields or repeat the user's question in a rigid template.
 
 Mention the main reason, the tradeoff between candidates, and any meaningful uncertainty in one or two short paragraphs. Keep the tone conversational and decisive, not bureaucratic. Do not mention hidden workspace details merely to make the answer sound analytical.
 
@@ -68,7 +68,7 @@ Fallback: <nearest alternative and trigger>
 Action: <recommend current reply, or specify delegated-task override>
 ```
 
-When using the structured format, include `Candidates: <model / effort — percentage>` with at least two entries unless the user explicitly requested a single model. Percentages must sum to 100% after rounding.
+When using the structured format, include `Best-fit: <model / effort>`, `Value: <model / effort>`, and `安心交付: <model / effort>`. Do not include fit percentages unless the user explicitly asks for them.
 
 Use `Confidence: low` when intent or environment evidence is incomplete. Distinguish observed facts from inference, and never expose credentials, private content, or irrelevant workspace details merely to justify a route.
 
